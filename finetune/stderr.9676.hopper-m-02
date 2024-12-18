@@ -1,74 +1,0 @@
-10/18/2024 02:10:49 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 1
-Local process index: 1
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/18/2024 02:10:49 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 0
-Local process index: 0
-Device: cpu:0
-
-Mixed precision type: bf16
-
-You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1969.16it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4288.65it/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.05s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.06s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.93s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.95s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.94s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.95s/it]
-{'use_learned_positional_embeddings'} was not found in config. Values will be initialized to default values.
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded scheduler as CogVideoXDDIMScheduler from `scheduler` subfolder of THUDM/CogVideoX-2b.
-Loaded tokenizer as T5Tokenizer from `tokenizer` subfolder of THUDM/CogVideoX-2b.
-Loading pipeline components...:  80%|████████  | 4/5 [00:00<00:00, 28.17it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 35.12it/s]
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:00<00:00,  7.06it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 34.70it/s]
-wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
-wandb: Currently logged in as: lyricmayday (yangluo). Use `wandb login --relogin` to force relogin
-wandb: Tracking run with wandb version 0.18.3
-wandb: Run data is saved locally in /home/svu/e0833524/CogVideo/finetune/wandb/run-20241018_021114-rn4hb9q7
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run usual-sponge-2
-wandb: ⭐️ View project at https://wandb.ai/yangluo/cogvideox-lora
-wandb: 🚀 View run at https://wandb.ai/yangluo/cogvideox-lora/runs/rn4hb9q7
-10/18/2024 02:11:14 - INFO - __main__ - ***** Running training *****
-10/18/2024 02:11:14 - INFO - __main__ -   Num trainable parameters = 1700926302
-10/18/2024 02:11:14 - INFO - __main__ -   Num examples = 69
-10/18/2024 02:11:14 - INFO - __main__ -   Num batches each epoch = 35
-10/18/2024 02:11:14 - INFO - __main__ -   Num epochs = 30
-10/18/2024 02:11:14 - INFO - __main__ -   Instantaneous batch size per device = 1
-10/18/2024 02:11:14 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 2
-10/18/2024 02:11:14 - INFO - __main__ -   Gradient accumulation steps = 1
-10/18/2024 02:11:14 - INFO - __main__ -   Total optimization steps = 1050
-Steps:   0%|          | 0/1050 [00:00<?, ?it/s]
-  0%|          | 0/50 [00:00<?, ?it/s][A  0%|          | 0/50 [00:00<?, ?it/s]
-  2%|▏         | 1/50 [17:59<14:41:13, 1079.05s/it][A  2%|▏         | 1/50 [18:10<14:50:29, 1090.39s/it]
-  4%|▍         | 2/50 [35:55<14:21:55, 1077.40s/it][A  4%|▍         | 2/50 [36:03<14:24:18, 1080.38s/it]
-  6%|▌         | 3/50 [53:50<14:03:13, 1076.46s/it][A  6%|▌         | 3/50 [54:13<14:09:30, 1084.47s/it]W1018 03:08:05.258000 22756021212288 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGTERM death signal, shutting down workers
-W1018 03:08:05.259000 22756021212288 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 219044 closing signal SIGTERM
-W1018 03:08:05.259000 22756021212288 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 219045 closing signal SIGTERM
-Traceback (most recent call last):
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/bin/accelerate", line 8, in <module>
-    sys.exit(main())
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
-    args.func(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1159, in launch_command
-    multi_gpu_launcher(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 793, in multi_gpu_launcher
-    distrib_run.run(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
-    elastic_launch(
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
-    result = agent.run()
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
-    result = f(*args, **kwargs)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 680, in run
-    result = self._invoke_run(role)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 835, in _invoke_run
-    time.sleep(monitor_interval)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 79, in _terminate_process_handler
-    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
-torch.distributed.elastic.multiprocessing.api.SignalException: Process 219007 got signal: 15

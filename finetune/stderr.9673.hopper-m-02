@@ -1,66 +1,0 @@
-10/18/2024 01:55:15 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 1
-Local process index: 1
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/18/2024 01:55:15 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 0
-Local process index: 0
-Device: cpu:0
-
-Mixed precision type: bf16
-
-You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1792.82it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4114.08it/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.99s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.37s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.55s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.48s/it]
-{'use_learned_positional_embeddings'} was not found in config. Values will be initialized to default values.
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  60%|██████    | 3/5 [00:00<00:00, 20.81it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 34.56it/s]
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1321, in <module>
-[rank1]:     main(args)
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 954, in main
-[rank1]:     train_dataset = VideoDataset(
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 446, in __init__
-[rank1]:     self.instance_prompts = self._load_dataset_from_local_path()
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 469, in _load_dataset_from_local_path
-[rank1]:     raise ValueError("Instance videos root folder does not exist")
-[rank1]: ValueError: Instance videos root folder does not exist
-W1018 01:55:42.222000 23055698171008 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 2001865 closing signal SIGTERM
-E1018 01:55:42.486000 23055698171008 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 1 (pid: 2001866) of binary: /hpctmp/e0833524/virtualenvs/cogvideo/bin/python
-Traceback (most recent call last):
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/bin/accelerate", line 8, in <module>
-    sys.exit(main())
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
-    args.func(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1159, in launch_command
-    multi_gpu_launcher(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 793, in multi_gpu_launcher
-    distrib_run.run(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
-    elastic_launch(
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-KD.py FAILED
-------------------------------------------------------------
-Failures:
-  <NO_OTHER_FAILURES>
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2024-10-18_01:55:42
-  host      : hopper-02.cm.cluster
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 2001866)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================

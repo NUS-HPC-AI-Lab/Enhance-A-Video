@@ -1,84 +1,0 @@
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 0
-Local process index: 0
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 1
-Local process index: 1
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 2
-Local process index: 2
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 3
-Local process index: 3
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 4
-Local process index: 4
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 6
-Local process index: 6
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 5
-Local process index: 5
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:29:42 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 7
-Local process index: 7
-Device: cpu:0
-
-Mixed precision type: bf16
-
-You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 2081.02it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4798.97it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4450.19it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4670.72it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4650.00it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4905.62it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4678.53it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4447.83it/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.74s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.71s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.73s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.65s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.72s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.67s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.66s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.60s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.78s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.77s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.78s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.77s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.75s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.78s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.74s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.77s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.79s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.78s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.76s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.75s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.73s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.76s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.71s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.74s/it]
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/huggingface_hub/file_download.py:983: UserWarning: Not enough free disk space to download the file. The expected file size is: 9925.34 MB. The target location /home/svu/e0833524/.cache/huggingface/hub/models--THUDM--CogVideoX-5b/blobs only has 2977.43 MB free disk space.
-  warnings.warn(
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]

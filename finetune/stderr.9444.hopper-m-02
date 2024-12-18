@@ -1,83 +1,0 @@
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 2
-Local process index: 2
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 0
-Local process index: 0
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 1
-Local process index: 1
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 3
-Local process index: 3
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 7
-Local process index: 7
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 4
-Local process index: 4
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 5
-Local process index: 5
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/16/2024 19:45:35 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 8
-Process index: 6
-Local process index: 6
-Device: cpu:0
-
-Mixed precision type: bf16
-
-You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.39s/it]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.37s/it]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.37s/it]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.36s/it]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.36s/it]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.41s/it]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.42s/it]Downloading shards:  50%|█████     | 1/2 [12:52<12:52, 772.43s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 818.99s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.00s/it]
-Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 819.01s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.02s/it]
-Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 819.02s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.02s/it]
-Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 819.01s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.02s/it]
-Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 819.02s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.03s/it]
-Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 819.02s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.03s/it]
-Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 819.03s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.04s/it]
-Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 819.02s/it]Downloading shards: 100%|██████████| 2/2 [27:04<00:00, 812.02s/it]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.55s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.99s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.01s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.01s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.01s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.01s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.05s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.85s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.96s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.01s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.15s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.15s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.16s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.17s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.16s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.16s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.00s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.15s/it]
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/huggingface_hub/file_download.py:983: UserWarning: Not enough free disk space to download the file. The expected file size is: 9925.34 MB. The target location /home/svu/e0833524/.cache/huggingface/hub/models--THUDM--CogVideoX-5b/blobs only has 2977.43 MB free disk space.
-  warnings.warn(

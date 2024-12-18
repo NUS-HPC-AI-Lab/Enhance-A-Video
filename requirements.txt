@@ -1,4 +1,3 @@
-diffusers>=0.30.3
 accelerate>=0.34.2
 transformers>=4.44.2
 numpy==1.26.0
@@ -13,3 +12,4 @@ openai>=1.45.0
 moviepy>=1.0.3
 pillow==9.5.0
 scikit-video
+git+https://github.com/huggingface/diffusers.git@862a7d5038c1c53641ffcab146a7eeb5ab683656

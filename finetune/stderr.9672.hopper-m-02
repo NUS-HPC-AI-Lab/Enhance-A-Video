@@ -1,79 +1,0 @@
-10/18/2024 01:50:02 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 0
-Local process index: 0
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/18/2024 01:50:02 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 1
-Local process index: 1
-Device: cpu:0
-
-Mixed precision type: bf16
-
-You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1758.25it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4211.15it/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.03s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.53s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.46s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.54s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.47s/it]
-{'use_learned_positional_embeddings'} was not found in config. Values will be initialized to default values.
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded tokenizer as T5Tokenizer from `tokenizer` subfolder of THUDM/CogVideoX-2b.
-Loading pipeline components...:  40%|████      | 2/5 [00:00<00:00, 13.96it/s]Loaded scheduler as CogVideoXDDIMScheduler from `scheduler` subfolder of THUDM/CogVideoX-2b.
-Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 34.42it/s]
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1319, in <module>
-[rank0]:     main(args)
-[rank0]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 952, in main
-[rank0]:     train_dataset = VideoDataset(
-[rank0]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 445, in __init__
-[rank0]:     self.instance_prompts = self._load_dataset_from_local_path()
-[rank0]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 467, in _load_dataset_from_local_path
-[rank0]:     raise ValueError("Instance videos root folder does not exist")
-[rank0]: ValueError: Instance videos root folder does not exist
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  40%|████      | 2/5 [00:00<00:00, 13.87it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 34.55it/s]
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1319, in <module>
-[rank1]:     main(args)
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 952, in main
-[rank1]:     train_dataset = VideoDataset(
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 445, in __init__
-[rank1]:     self.instance_prompts = self._load_dataset_from_local_path()
-[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 467, in _load_dataset_from_local_path
-[rank1]:     raise ValueError("Instance videos root folder does not exist")
-[rank1]: ValueError: Instance videos root folder does not exist
-W1018 01:50:31.678000 22625634968704 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1999892 closing signal SIGTERM
-E1018 01:50:31.841000 22625634968704 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 0 (pid: 1999891) of binary: /hpctmp/e0833524/virtualenvs/cogvideo/bin/python
-Traceback (most recent call last):
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/bin/accelerate", line 8, in <module>
-    sys.exit(main())
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
-    args.func(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1159, in launch_command
-    multi_gpu_launcher(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 793, in multi_gpu_launcher
-    distrib_run.run(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
-    elastic_launch(
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-KD.py FAILED
-------------------------------------------------------------
-Failures:
-  <NO_OTHER_FAILURES>
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2024-10-18_01:50:31
-  host      : hopper-02.cm.cluster
-  rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 1999891)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================

@@ -1,72 +1,0 @@
-10/19/2024 00:28:01 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 1
-Local process index: 1
-Device: cpu:0
-
-Mixed precision type: bf16
-
-10/19/2024 00:28:01 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
-Num processes: 2
-Process index: 0
-Local process index: 0
-Device: cpu:0
-
-Mixed precision type: bf16
-
-You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 598.46it/s]
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4348.68it/s]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.44s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.18s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.22s/it]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.18s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.22s/it]
-{'use_learned_positional_embeddings'} was not found in config. Values will be initialized to default values.
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded scheduler as CogVideoXDDIMScheduler from `scheduler` subfolder of THUDM/CogVideoX-2b.
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded tokenizer as T5Tokenizer from `tokenizer` subfolder of THUDM/CogVideoX-2b.
-Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 34.77it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 34.73it/s]
-Loading pipeline components...:  20%|██        | 1/5 [00:00<00:00,  7.20it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 35.43it/s]
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded scheduler as CogVideoXDDIMScheduler from `scheduler` subfolder of THUDM/CogVideoX-2b.
-Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded tokenizer as T5Tokenizer from `tokenizer` subfolder of THUDM/CogVideoX-2b.
-Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 37.68it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 37.64it/s]
-Loading pipeline components...:  20%|██        | 1/5 [00:00<00:00,  7.55it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 37.11it/s]
-10/19/2024 00:28:27 - INFO - __main__ - ***** Running training *****
-10/19/2024 00:28:27 - INFO - __main__ -   Num trainable parameters = 1700926302
-10/19/2024 00:28:27 - INFO - __main__ -   Num examples = 69
-10/19/2024 00:28:27 - INFO - __main__ -   Num batches each epoch = 35
-10/19/2024 00:28:27 - INFO - __main__ -   Num epochs = 30
-10/19/2024 00:28:27 - INFO - __main__ -   Instantaneous batch size per device = 1
-10/19/2024 00:28:27 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 2
-10/19/2024 00:28:27 - INFO - __main__ -   Gradient accumulation steps = 1
-10/19/2024 00:28:27 - INFO - __main__ -   Total optimization steps = 1050
-Steps:   0%|          | 0/1050 [00:00<?, ?it/s]10/19/2024 00:28:27 - INFO - __main__ -   Total optimization steps = 1050
-  0%|          | 0/50 [00:00<?, ?it/s]
-  0%|          | 0/50 [00:00<?, ?it/s][A  2%|▏         | 1/50 [17:52<14:35:33, 1072.11s/it]
-  2%|▏         | 1/50 [18:00<14:42:37, 1080.76s/it][A  4%|▍         | 2/50 [35:43<14:17:26, 1071.80s/it]
-  4%|▍         | 2/50 [35:46<14:17:31, 1071.90s/it][A  6%|▌         | 3/50 [53:35<13:59:29, 1071.68s/it]
-  6%|▌         | 3/50 [53:36<13:58:58, 1071.04s/it][A
-  8%|▊         | 4/50 [1:11:24<13:40:17, 1069.95s/it][A  8%|▊         | 4/50 [1:11:26<13:41:37, 1071.69s/it]W1019 01:57:28.736000 22813695345792 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGTERM death signal, shutting down workers
-W1019 01:57:28.737000 22813695345792 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 674488 closing signal SIGTERM
-W1019 01:57:28.737000 22813695345792 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 674489 closing signal SIGTERM
-Traceback (most recent call last):
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/bin/accelerate", line 8, in <module>
-    sys.exit(main())
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
-    args.func(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1159, in launch_command
-    multi_gpu_launcher(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 793, in multi_gpu_launcher
-    distrib_run.run(args)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
-    elastic_launch(
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
-    result = agent.run()
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
-    result = f(*args, **kwargs)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 680, in run
-    result = self._invoke_run(role)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 835, in _invoke_run
-    time.sleep(monitor_interval)
-  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 79, in _terminate_process_handler
-    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
-torch.distributed.elastic.multiprocessing.api.SignalException: Process 674407 got signal: 15
