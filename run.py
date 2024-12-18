@@ -29,7 +29,7 @@ from diffusers import (
 )
 from diffusers.utils import export_to_video, load_image, load_video
 
-from cogvideo import inject_cogvideo
+from feta import inject_cogvideo
 
 
 def generate_video(

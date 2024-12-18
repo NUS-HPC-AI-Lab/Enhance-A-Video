@@ -6,7 +6,7 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
-from global_vals import get_num_frames, set_num_frames
+from feta.globals import get_num_frames, set_num_frames
 
 
 def inject_cogvideo(model: nn.Module) -> None:
