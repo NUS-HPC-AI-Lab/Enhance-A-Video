@@ -1,5 +1,5 @@
 NUM_FRAMES = None
-FETA_RATIO = None
+FETA_WEIGHT = None
 
 
 def set_num_frames(num_frames: int):
@@ -11,10 +11,10 @@ def get_num_frames() -> int:
     return NUM_FRAMES
 
 
-def set_feta_ratio(feta_ratio: float):
-    global FETA_RATIO
-    FETA_RATIO = feta_ratio
+def set_feta_weight(feta_weight: float):
+    global FETA_WEIGHT
+    FETA_WEIGHT = feta_weight
 
 
-def get_feta_ratio() -> float:
-    return FETA_RATIO
+def get_feta_weight() -> float:
+    return FETA_WEIGHT

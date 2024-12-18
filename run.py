@@ -29,7 +29,7 @@ from diffusers import (
 )
 from diffusers.utils import export_to_video, load_image, load_video
 
-from feta import inject_cogvideo
+from feta import inject_feta_for_cogvideox, set_feta_weight
 
 
 def generate_video(
@@ -103,7 +103,10 @@ def generate_video(
     pipe.vae.enable_slicing()
     pipe.vae.enable_tiling()
 
-    inject_cogvideo(pipe.transformer)
+    # ============ FETA ============
+    inject_feta_for_cogvideox(pipe.transformer)
+    set_feta_weight(1)
+    # ============ FETA ============
 
     # 4. Generate the video frames based on the prompt.
     # `num_frames` is the Number of frames to generate.

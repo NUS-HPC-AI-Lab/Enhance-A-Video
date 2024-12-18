@@ -6,10 +6,15 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
-from feta.globals import get_num_frames, set_num_frames
+from feta.globals import get_feta_weight, get_num_frames, set_num_frames
 
 
-def inject_cogvideo(model: nn.Module) -> None:
+def inject_feta_for_cogvideox(model: nn.Module) -> None:
+    """
+    Inject FETA for CogVideoX model.
+    1. register hook to update num frames
+    2. replace attention processor with feta to weight the attention scores
+    """
     # register hook to update num frames
     model.register_forward_pre_hook(num_frames_hook, with_kwargs=True)
     # replace attention with feta
@@ -18,7 +23,10 @@ def inject_cogvideo(model: nn.Module) -> None:
             module.set_processor(FETACogVideoXAttnProcessor2_0())
 
 
-def num_frames_hook(module, args, kwargs):
+def num_frames_hook(_, args, kwargs):
+    """
+    Hook to update the number of frames automatically.
+    """
     if "hidden_states" in kwargs:
         hidden_states = kwargs["hidden_states"]
     else:
@@ -86,10 +94,7 @@ class FETACogVideoXAttnProcessor2_0:
         num_off_diag = num_frames * num_frames - num_frames
         mean_scores = attn_wo_diag.sum(dim=(1, 2)) / num_off_diag
 
-        # mean_scores_mean = torch.quantile(mean_scores, 0.5) * num_frames * (1 + 0.0556)
-        # mean_scores_mean = torch.quantile(mean_scores, 0.5) * (num_frames + 1)
-        # mean_scores_mean = mean_scores.mean() * num_frames * (1 + 0.05)
-        mean_scores_mean = mean_scores.mean() * (num_frames + 1)
+        mean_scores_mean = mean_scores.mean() * (num_frames + get_feta_weight())
         mean_scores_mean = mean_scores_mean.clamp(min=1)
         return mean_scores_mean
 
