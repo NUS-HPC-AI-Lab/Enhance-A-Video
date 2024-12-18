@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+Traceback (most recent call last):
+  File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 497, in <module>
+    class LatentDiscriminator(nn.Module):
+NameError: name 'nn' is not defined
+W1017 20:36:57.968000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1836294 closing signal SIGTERM
+W1017 20:36:57.968000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1836296 closing signal SIGTERM
+W1017 20:36:57.968000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1836297 closing signal SIGTERM
+W1017 20:36:57.968000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1836298 closing signal SIGTERM
+W1017 20:36:57.968000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1836299 closing signal SIGTERM
+W1017 20:36:57.968000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1836300 closing signal SIGTERM
+W1017 20:36:57.968000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1836301 closing signal SIGTERM
+E1017 20:36:57.984000 22568338199680 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 1 (pid: 1836295) of binary: /hpctmp/e0833524/virtualenvs/cogvideo/bin/python
+Traceback (most recent call last):
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
+    args.func(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1159, in launch_command
+    multi_gpu_launcher(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 793, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+KD.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-10-17_20:36:57
+  host      : hopper-03.cm.cluster
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1836295)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

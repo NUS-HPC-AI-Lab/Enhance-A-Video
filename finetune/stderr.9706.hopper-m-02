@@ -1,0 +1,114 @@
+10/18/2024 03:08:59 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 2
+Process index: 0
+Local process index: 0
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/18/2024 03:08:59 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 2
+Process index: 1
+Local process index: 1
+Device: cpu:0
+
+Mixed precision type: bf16
+
+You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 1058.90it/s]
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards: 100%|██████████| 2/2 [00:00<00:00, 4066.22it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.03s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.89s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.91s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.87s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.90s/it]
+{'use_learned_positional_embeddings'} was not found in config. Values will be initialized to default values.
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded scheduler as CogVideoXDDIMScheduler from `scheduler` subfolder of THUDM/CogVideoX-2b.
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loaded tokenizer as T5Tokenizer from `tokenizer` subfolder of THUDM/CogVideoX-2b.
+Loading pipeline components...:  60%|██████    | 3/5 [00:00<00:00, 20.98it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 34.86it/s]
+Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 35.24it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 35.19it/s]
+wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: lyricmayday (yangluo). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.18.3
+wandb: Run data is saved locally in /home/svu/e0833524/CogVideo/finetune/wandb/run-20241018_030924-bwz2gl24
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run radiant-salad-3
+wandb: ⭐️ View project at https://wandb.ai/yangluo/cogvideox-lora
+wandb: 🚀 View run at https://wandb.ai/yangluo/cogvideox-lora/runs/bwz2gl24
+10/18/2024 03:09:25 - INFO - __main__ - ***** Running training *****
+10/18/2024 03:09:25 - INFO - __main__ -   Num trainable parameters = 1700926302
+10/18/2024 03:09:25 - INFO - __main__ -   Num examples = 69
+10/18/2024 03:09:25 - INFO - __main__ -   Num batches each epoch = 35
+10/18/2024 03:09:25 - INFO - __main__ -   Num epochs = 30
+10/18/2024 03:09:25 - INFO - __main__ -   Instantaneous batch size per device = 1
+10/18/2024 03:09:25 - INFO - __main__ -   Total train batch size (w. parallel, distributed & accumulation) = 2
+10/18/2024 03:09:25 - INFO - __main__ -   Gradient accumulation steps = 1
+10/18/2024 03:09:25 - INFO - __main__ -   Total optimization steps = 1050
+Steps:   0%|          | 0/1050 [00:00<?, ?it/s]
+  0%|          | 0/50 [00:00<?, ?it/s][A  0%|          | 0/50 [00:00<?, ?it/s]
+  2%|▏         | 1/50 [17:56<14:38:51, 1076.16s/it][A  2%|▏         | 1/50 [18:08<14:48:37, 1088.11s/it]
+  4%|▍         | 2/50 [35:50<14:19:58, 1074.97s/it][A  4%|▍         | 2/50 [36:17<14:30:53, 1088.61s/it]
+  6%|▌         | 3/50 [53:43<14:01:16, 1073.96s/it][A  6%|▌         | 3/50 [54:26<14:12:55, 1088.85s/it]
+  8%|▊         | 4/50 [1:11:35<13:42:51, 1073.29s/it][A  8%|▊         | 4/50 [1:12:37<13:55:26, 1089.72s/it]
+ 10%|█         | 5/50 [1:29:28<13:24:52, 1073.16s/it][A 10%|█         | 5/50 [1:30:49<13:37:51, 1090.48s/it]
+ 12%|█▏        | 6/50 [1:47:22<13:07:20, 1073.65s/it][A 12%|█▏        | 6/50 [1:48:57<13:19:08, 1089.73s/it]
+ 14%|█▍        | 7/50 [2:05:17<12:49:42, 1074.02s/it][A 14%|█▍        | 7/50 [2:07:04<13:00:16, 1088.75s/it]
+ 16%|█▌        | 8/50 [2:23:11<12:31:46, 1073.96s/it][A 16%|█▌        | 8/50 [2:25:11<12:41:47, 1088.28s/it]
+ 18%|█▊        | 9/50 [2:41:03<12:13:27, 1073.36s/it][A 18%|█▊        | 9/50 [2:43:20<12:23:51, 1088.56s/it]
+ 20%|██        | 10/50 [2:58:56<11:55:26, 1073.16s/it][A 20%|██        | 10/50 [3:01:29<12:05:51, 1088.79s/it]
+ 22%|██▏       | 11/50 [3:16:48<11:37:27, 1073.01s/it][A 22%|██▏       | 11/50 [3:19:38<11:47:46, 1088.87s/it]
+ 24%|██▍       | 12/50 [3:34:42<11:19:39, 1073.14s/it][A 24%|██▍       | 12/50 [3:37:49<11:29:57, 1089.42s/it]
+ 26%|██▌       | 13/50 [3:52:35<11:01:47, 1073.18s/it][A 26%|██▌       | 13/50 [3:56:02<11:12:24, 1090.39s/it]
+ 28%|██▊       | 14/50 [4:10:28<10:43:50, 1073.08s/it][A 28%|██▊       | 14/50 [4:14:14<10:54:37, 1091.05s/it]
+ 30%|███       | 15/50 [4:28:20<10:25:50, 1072.88s/it][A 30%|███       | 15/50 [4:32:27<10:36:41, 1091.47s/it]
+ 32%|███▏      | 16/50 [4:46:14<10:08:05, 1073.10s/it][A 32%|███▏      | 16/50 [4:50:40<10:18:44, 1091.90s/it]
+ 34%|███▍      | 17/50 [5:04:08<9:50:22, 1073.40s/it] [A 34%|███▍      | 17/50 [5:08:50<10:00:17, 1091.45s/it]
+ 36%|███▌      | 18/50 [5:22:02<9:32:38, 1073.69s/it][A 36%|███▌      | 18/50 [5:26:58<9:41:31, 1090.36s/it] 
+ 38%|███▊      | 19/50 [5:39:57<9:14:54, 1074.01s/it][A 38%|███▊      | 19/50 [5:45:06<9:23:00, 1089.68s/it]
+ 40%|████      | 20/50 [5:57:52<8:57:03, 1074.11s/it][A 40%|████      | 20/50 [6:03:15<9:04:41, 1089.38s/it]
+ 42%|████▏     | 21/50 [6:15:46<8:39:12, 1074.22s/it][A 42%|████▏     | 21/50 [6:21:23<8:46:23, 1089.10s/it]
+ 44%|████▍     | 22/50 [6:33:41<8:21:26, 1074.51s/it][A 44%|████▍     | 22/50 [6:39:30<8:28:00, 1088.59s/it]
+ 46%|████▌     | 23/50 [6:51:37<8:03:43, 1074.93s/it][A 46%|████▌     | 23/50 [6:57:41<8:10:08, 1089.19s/it]
+ 48%|████▊     | 24/50 [7:09:32<7:45:46, 1074.88s/it][A 48%|████▊     | 24/50 [7:15:54<7:52:25, 1090.22s/it]
+ 50%|█████     | 25/50 [7:27:27<7:27:52, 1074.91s/it][A 50%|█████     | 25/50 [7:34:06<7:34:34, 1090.97s/it]
+ 52%|█████▏    | 26/50 [7:45:21<7:09:53, 1074.72s/it][A 52%|█████▏    | 26/50 [7:52:14<7:15:57, 1089.89s/it]
+ 54%|█████▍    | 27/50 [8:03:16<6:52:01, 1074.83s/it][A 54%|█████▍    | 27/50 [8:10:21<6:57:29, 1089.10s/it]
+ 56%|█████▌    | 28/50 [8:21:13<6:34:17, 1075.33s/it][A 56%|█████▌    | 28/50 [8:28:32<6:39:33, 1089.70s/it]
+ 58%|█████▊    | 29/50 [8:39:09<6:16:30, 1075.76s/it][A 58%|█████▊    | 29/50 [8:46:38<6:21:01, 1088.65s/it]
+ 60%|██████    | 30/50 [8:57:05<5:58:36, 1075.85s/it][A 60%|██████    | 30/50 [9:04:44<6:02:37, 1087.90s/it]
+ 62%|██████▏   | 31/50 [9:15:02<5:40:44, 1076.03s/it][A 62%|██████▏   | 31/50 [9:22:51<5:44:24, 1087.62s/it]
+ 64%|██████▍   | 32/50 [9:32:57<5:22:43, 1075.77s/it][A 64%|██████▍   | 32/50 [9:40:57<5:26:05, 1086.98s/it]
+ 66%|██████▌   | 33/50 [9:50:51<5:04:38, 1075.23s/it][A 66%|██████▌   | 33/50 [9:59:00<5:07:41, 1085.96s/it]
+ 68%|██████▊   | 34/50 [10:08:44<4:46:32, 1074.55s/it][A 68%|██████▊   | 34/50 [10:17:04<4:49:25, 1085.31s/it]
+ 70%|███████   | 35/50 [10:26:37<4:28:32, 1074.16s/it][A 70%|███████   | 35/50 [10:35:10<4:31:21, 1085.43s/it]
+ 72%|███████▏  | 36/50 [10:44:30<4:10:33, 1073.80s/it][A 72%|███████▏  | 36/50 [10:53:13<4:13:07, 1084.84s/it]
+ 74%|███████▍  | 37/50 [11:02:23<3:52:33, 1073.36s/it][A 74%|███████▍  | 37/50 [11:11:18<3:55:01, 1084.72s/it]
+ 76%|███████▌  | 38/50 [11:20:15<3:34:37, 1073.11s/it][A 76%|███████▌  | 38/50 [11:29:21<3:36:52, 1084.38s/it]
+ 78%|███████▊  | 39/50 [11:38:07<3:16:41, 1072.86s/it][A 78%|███████▊  | 39/50 [11:47:25<3:18:45, 1084.13s/it]
+ 80%|████████  | 40/50 [11:56:00<2:58:47, 1072.72s/it][A 80%|████████  | 40/50 [12:05:28<3:00:38, 1083.80s/it]
+ 82%|████████▏ | 41/50 [12:13:52<2:40:54, 1072.67s/it][A 82%|████████▏ | 41/50 [12:23:32<2:42:33, 1083.69s/it]
+ 84%|████████▍ | 42/50 [12:31:46<2:23:02, 1072.83s/it][A 84%|████████▍ | 42/50 [12:41:36<2:24:30, 1083.85s/it]
+ 86%|████████▌ | 43/50 [12:49:40<2:05:14, 1073.43s/it][AW1018 16:04:36.510000 23268841751680 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGTERM death signal, shutting down workers
+W1018 16:04:36.511000 23268841751680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 240392 closing signal SIGTERM
+W1018 16:04:36.511000 23268841751680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 240393 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
+    args.func(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1159, in launch_command
+    multi_gpu_launcher(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 793, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
+    result = agent.run()
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 680, in run
+    result = self._invoke_run(role)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 835, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 79, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 240356 got signal: 15

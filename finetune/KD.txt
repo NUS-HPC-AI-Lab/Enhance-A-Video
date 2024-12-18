@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -q auto
+#PBS -o output.log
+#PBS -e error.log
+#PBS -j oe
+#PBS -k oed
+#PBS -l select=1:ngpus=2
+#PBS -l walltime=24:00:00
+#PBS -P H100008
+cd $PBS_O_WORKDIR;
+image="/app1/common/singularity-img/hopper/cuda/cuda_12.4.1-cudnn-devel-u22.04.sif"
+module load singularity
+
+singularity exec -e $image bash << EOF > stdout.$PBS_JOBID 2> stderr.$PBS_JOBID
+source /hpctmp/e0833524/virtualenvs/cogvideo/bin/activate
+
+bash KD.sh
+
+# you can put more commands here
+EOF

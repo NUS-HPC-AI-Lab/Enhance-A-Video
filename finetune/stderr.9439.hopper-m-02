@@ -1,0 +1,168 @@
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 4
+Local process index: 4
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 1
+Local process index: 1
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 0
+Local process index: 0
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 7
+Local process index: 7
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 2
+Local process index: 2
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 3
+Local process index: 3
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 5
+Local process index: 5
+Device: cpu:0
+
+Mixed precision type: bf16
+
+10/16/2024 19:01:37 - INFO - __main__ - Distributed environment: MULTI_CPU  Backend: gloo
+Num processes: 8
+Process index: 6
+Local process index: 6
+Device: cpu:0
+
+Mixed precision type: bf16
+
+You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.20s/it]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.18s/it]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.20s/it]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.24s/it]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.21s/it]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.22s/it]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.24s/it]Downloading shards:  50%|█████     | 1/2 [07:06<07:06, 426.23s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.92s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.42s/it]
+Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.93s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.42s/it]
+Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.94s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.43s/it]
+Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.92s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.42s/it]
+Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.93s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.43s/it]
+Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.93s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.42s/it]
+Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.93s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.43s/it]
+Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 402.94s/it]Downloading shards: 100%|██████████| 2/2 [13:32<00:00, 406.43s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.61s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.97s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.97s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.97s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.97s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.96s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.97s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.98s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.27s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.52s/it]
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank5]:     main(args)
+[rank5]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank5]:     discriminator = LatentDiscriminator(latent_dim)
+[rank5]: NameError: name 'latent_dim' is not defined
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.55s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.71s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.71s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.71s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.71s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.71s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.71s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.71s/it]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank0]:     discriminator = LatentDiscriminator(latent_dim)
+[rank0]: NameError: name 'latent_dim' is not defined
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank1]:     main(args)
+[rank1]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank1]:     discriminator = LatentDiscriminator(latent_dim)
+[rank1]: NameError: name 'latent_dim' is not defined
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank6]:     main(args)
+[rank6]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank6]:     discriminator = LatentDiscriminator(latent_dim)
+[rank6]: NameError: name 'latent_dim' is not defined
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank2]:     main(args)
+[rank2]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank2]:     discriminator = LatentDiscriminator(latent_dim)
+[rank2]: NameError: name 'latent_dim' is not defined
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank7]:     main(args)
+[rank7]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank7]:     discriminator = LatentDiscriminator(latent_dim)
+[rank7]: NameError: name 'latent_dim' is not defined
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank4]:     main(args)
+[rank4]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank4]:     discriminator = LatentDiscriminator(latent_dim)
+[rank4]: NameError: name 'latent_dim' is not defined
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 1209, in <module>
+[rank3]:     main(args)
+[rank3]:   File "/home/svu/e0833524/CogVideo/finetune/KD.py", line 753, in main
+[rank3]:     discriminator = LatentDiscriminator(latent_dim)
+[rank3]: NameError: name 'latent_dim' is not defined
+W1016 19:15:38.198000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1390021 closing signal SIGTERM
+W1016 19:15:38.198000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1390022 closing signal SIGTERM
+W1016 19:15:38.199000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1390023 closing signal SIGTERM
+W1016 19:15:38.199000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1390024 closing signal SIGTERM
+W1016 19:15:38.199000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1390025 closing signal SIGTERM
+W1016 19:15:38.200000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1390027 closing signal SIGTERM
+W1016 19:15:38.200000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 1390028 closing signal SIGTERM
+E1016 19:15:38.264000 23341528110208 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 5 (pid: 1390026) of binary: /hpctmp/e0833524/virtualenvs/cogvideo/bin/python
+Traceback (most recent call last):
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
+    args.func(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1159, in launch_command
+    multi_gpu_launcher(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 793, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/hpctmp/e0833524/virtualenvs/cogvideo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+KD.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-10-16_19:15:38
+  host      : hopper-04.cm.cluster
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 1390026)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
