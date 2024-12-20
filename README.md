@@ -2,6 +2,8 @@
 
 This repository is the official implementation of [Enhance-a-Video: Better Generared Video for Free](https://oahzxl.github.io/Enhance_A_Video/).
 
+[![]()](https://oahzxl.github.io/Enhance_A_Video/static/videos/demo.mp4)
+
 ## News
 - 2024-12-20: Enhance-a-Video is now available for [CogVideoX](https://github.com/THUDM/CogVideo) and [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)!
 
