@@ -4,7 +4,7 @@ from diffusers.utils import export_to_video
 
 from feta import enable_feta, inject_feta_for_cogvideox, set_feta_weight
 
-pipe = CogVideoXPipeline.from_pretrained("THUDM/CogVideoX-2b", torch_dtype=torch.float16)
+pipe = CogVideoXPipeline.from_pretrained("THUDM/CogVideoX-5b", torch_dtype=torch.bfloat16)
 
 pipe.to("cuda")
 # pipe.enable_sequential_cpu_offload()
@@ -24,7 +24,6 @@ video_generate = pipe(
     prompt=prompt,
     num_videos_per_prompt=1,
     num_inference_steps=50,
-    num_frames=49,
     use_dynamic_cfg=True,
     guidance_scale=6.0,
     generator=torch.Generator().manual_seed(42),
