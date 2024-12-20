@@ -7,6 +7,7 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
+from feta.feta import feta_score
 from feta.globals import get_num_frames, is_feta_enabled, set_num_frames
 
 
@@ -62,31 +63,7 @@ class FETAHunyuanVideoAttnProcessor2_0:
         )
         key_image = rearrange(img_k, "B N (T S) C -> (B S) N T C", T=num_frames, S=spatial_dim, N=num_heads, C=head_dim)
 
-        scale = head_dim**-0.5
-        query_image = query_image * scale
-        attn_temp = query_image @ key_image.transpose(-2, -1)  # translate attn to float32
-        attn_temp = attn_temp.to(torch.float32)
-        attn_temp = attn_temp.softmax(dim=-1)
-
-        num_frames = attn_temp.shape[1]
-        # Reshape to [batch_size * num_tokens, num_frames, num_frames]
-        attn_temp = attn_temp.reshape(-1, num_frames, num_frames)
-
-        # Create a mask for diagonal elements
-        diag_mask = torch.eye(num_frames, device=attn_temp.device).bool()
-        diag_mask = diag_mask.unsqueeze(0).expand(attn_temp.shape[0], -1, -1)
-
-        # Zero out diagonal elements
-        attn_wo_diag = attn_temp.masked_fill(diag_mask, 0)
-
-        # Calculate mean for each token's attention matrix
-        # Number of off-diagonal elements per matrix is n*n - n
-        num_off_diag = num_frames * num_frames - num_frames
-        mean_scores = attn_wo_diag.sum(dim=(1, 2)) / num_off_diag
-
-        mean_scores_mean = mean_scores.mean() * (num_frames + 10)
-        mean_scores_mean = mean_scores_mean.clamp(min=1)
-        return mean_scores_mean
+        return feta_score(query_image, key_image, head_dim, num_frames)
 
     def __call__(
         self,

@@ -6,7 +6,8 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
-from feta.globals import get_feta_weight, get_num_frames, is_feta_enabled, set_num_frames
+from feta.feta import feta_score
+from feta.globals import get_num_frames, is_feta_enabled, set_num_frames
 
 
 def inject_feta_for_cogvideox(model: nn.Module) -> None:
@@ -47,56 +48,33 @@ class FETACogVideoXAttnProcessor2_0:
             raise ImportError("CogVideoXAttnProcessor requires PyTorch 2.0, to use it, please upgrade PyTorch to 2.0.")
 
     def _get_feta_scores(
-        self, attn: Attention, image_hidden_states: torch.Tensor, head_dim: int, batch_size: int
+        self,
+        attn: Attention,
+        query: torch.Tensor,
+        key: torch.Tensor,
+        head_dim: int,
+        text_seq_length: int,
     ) -> torch.Tensor:
         num_frames = get_num_frames()
-
-        query_image = attn.to_q(image_hidden_states)
-        key_image = attn.to_k(image_hidden_states)
-
-        query_image = query_image.view(batch_size, -1, attn.heads, head_dim).transpose(1, 2)
-        key_image = key_image.view(batch_size, -1, attn.heads, head_dim).transpose(1, 2)
-
-        spatial_dim = int(query_image.shape[2] / num_frames)
-
-        if attn.norm_q is not None:
-            query_image = attn.norm_q(query_image)
-        if attn.norm_k is not None:
-            key_image = attn.norm_k(key_image)
-
-        spatial_dim = int(query_image.shape[2] / num_frames)
+        spatial_dim = int((query.shape[2] - text_seq_length) / num_frames)
 
         query_image = rearrange(
-            query_image, "B N (T S) C -> (B S) N T C", N=attn.heads, T=num_frames, S=spatial_dim, C=head_dim
+            query[:, :, text_seq_length:],
+            "B N (T S) C -> (B S) N T C",
+            N=attn.heads,
+            T=num_frames,
+            S=spatial_dim,
+            C=head_dim,
         )
         key_image = rearrange(
-            key_image, "B N (T S) C -> (B S) N T C", N=attn.heads, T=num_frames, S=spatial_dim, C=head_dim
+            key[:, :, text_seq_length:],
+            "B N (T S) C -> (B S) N T C",
+            N=attn.heads,
+            T=num_frames,
+            S=spatial_dim,
+            C=head_dim,
         )
-        scale = head_dim**-0.5
-        query_image = query_image * scale
-        attn_temp = query_image @ key_image.transpose(-2, -1)  # translate attn to float32
-        attn_temp = attn_temp.to(torch.float32)
-        attn_temp = attn_temp.softmax(dim=-1)
-
-        num_frames = attn_temp.shape[2]
-        # Reshape to [batch_size * num_tokens, num_frames, num_frames]
-        attn_temp = attn_temp.reshape(-1, num_frames, num_frames)
-
-        # Create a mask for diagonal elements
-        diag_mask = torch.eye(num_frames, device=attn_temp.device).bool()
-        diag_mask = diag_mask.unsqueeze(0).expand(attn_temp.shape[0], -1, -1)
-
-        # Zero out diagonal elements
-        attn_wo_diag = attn_temp.masked_fill(diag_mask, 0)
-
-        # Calculate mean for each token's attention matrix
-        # Number of off-diagonal elements per matrix is n*n - n
-        num_off_diag = num_frames * num_frames - num_frames
-        mean_scores = attn_wo_diag.sum(dim=(1, 2)) / num_off_diag
-
-        mean_scores_mean = mean_scores.mean() * (num_frames + get_feta_weight())
-        mean_scores_mean = mean_scores_mean.clamp(min=1)
-        return mean_scores_mean
+        return feta_score(query_image, key_image, head_dim, num_frames)
 
     def __call__(
         self,
@@ -107,11 +85,6 @@ class FETACogVideoXAttnProcessor2_0:
         image_rotary_emb: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
         text_seq_length = encoder_hidden_states.size(1)
-
-        # ========== FETA ==========
-        if is_feta_enabled():
-            image_hidden_states = hidden_states.clone()
-        # ========== FETA ==========
 
         hidden_states = torch.cat([encoder_hidden_states, hidden_states], dim=1)
 
@@ -130,11 +103,6 @@ class FETACogVideoXAttnProcessor2_0:
         inner_dim = key.shape[-1]
         head_dim = inner_dim // attn.heads
 
-        # ========== FETA ==========
-        if is_feta_enabled():
-            feta_scores = self._get_feta_scores(attn, image_hidden_states, head_dim, batch_size)
-        # ========== FETA ==========
-
         query = query.view(batch_size, -1, attn.heads, head_dim).transpose(1, 2)
         key = key.view(batch_size, -1, attn.heads, head_dim).transpose(1, 2)
         value = value.view(batch_size, -1, attn.heads, head_dim).transpose(1, 2)
@@ -151,6 +119,11 @@ class FETACogVideoXAttnProcessor2_0:
             query[:, :, text_seq_length:] = apply_rotary_emb(query[:, :, text_seq_length:], image_rotary_emb)
             if not attn.is_cross_attention:
                 key[:, :, text_seq_length:] = apply_rotary_emb(key[:, :, text_seq_length:], image_rotary_emb)
+
+        # ========== FETA ==========
+        if is_feta_enabled():
+            feta_scores = self._get_feta_scores(attn, query, key, head_dim, text_seq_length)
+        # ========== FETA ==========
 
         hidden_states = F.scaled_dot_product_attention(
             query, key, value, attn_mask=attention_mask, dropout_p=0.0, is_causal=False
