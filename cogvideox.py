@@ -12,6 +12,7 @@ pipe.vae.enable_slicing()
 # pipe.vae.enable_tiling()
 
 # ============ FETA ============
+# comment the following if you want to use the original model
 inject_feta_for_cogvideox(pipe.transformer)
 set_feta_weight(1)
 enable_feta()

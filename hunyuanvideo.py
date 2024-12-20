@@ -17,6 +17,7 @@ pipe.vae.enable_tiling()
 # pipe.vae.enable_tiling()
 
 # ============ FETA ============
+# comment the following if you want to use the original model
 inject_feta_for_hunyuanvideo(pipe.transformer)
 set_feta_weight(4)
 enable_feta()
@@ -29,7 +30,7 @@ output = pipe(
     height=544,
     width=960,
     num_frames=129,
-    num_inference_steps=30,
+    num_inference_steps=50,
     generator=torch.Generator().manual_seed(42),
 ).frames[0]
 
