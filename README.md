@@ -1,6 +1,6 @@
 # Enhance-A-Video
 
-This repository is the official implementation of [Enhance-A-Video: Free Temporal Alignment for Video Enhancement](https://oahzxl.github.io/FETA/).
+This repository is the official implementation of [Enhance-a-Video: Better Generared Video for Free](https://oahzxl.github.io/FETA/).
 
 ## News
 - 2024-12-20: FETA is now available for [CogVideoX](https://github.com/THUDM/CogVideo) and [HunyuanVideo](https://huggingface.co/THUDM/HunyuanVideo-2b)!
