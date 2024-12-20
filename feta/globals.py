@@ -1,5 +1,6 @@
 NUM_FRAMES = None
 FETA_WEIGHT = None
+ENABLE_FETA = False
 
 
 def set_num_frames(num_frames: int):
@@ -9,6 +10,15 @@ def set_num_frames(num_frames: int):
 
 def get_num_frames() -> int:
     return NUM_FRAMES
+
+
+def enable_feta():
+    global ENABLE_FETA
+    ENABLE_FETA = True
+
+
+def is_feta_enabled() -> bool:
+    return ENABLE_FETA
 
 
 def set_feta_weight(feta_weight: float):

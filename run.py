@@ -29,7 +29,7 @@ from diffusers import (
 )
 from diffusers.utils import export_to_video, load_image, load_video
 
-from feta import inject_feta_for_cogvideox, set_feta_weight
+from feta import enable_feta, inject_feta_for_cogvideox, set_feta_weight
 
 
 def generate_video(
@@ -88,24 +88,20 @@ def generate_video(
     # Can be changed to `CogVideoXDPMScheduler` or `CogVideoXDDIMScheduler`.
     # We recommend using `CogVideoXDDIMScheduler` for CogVideoX-2B.
     # using `CogVideoXDPMScheduler` for CogVideoX-5B / CogVideoX-5B-I2V.
-
-    # pipe.scheduler = CogVideoXDDIMScheduler.from_config(pipe.scheduler.config, timestep_spacing="trailing")
     pipe.scheduler = CogVideoXDPMScheduler.from_config(pipe.scheduler.config, timestep_spacing="trailing")
 
     # 3. Enable CPU offload for the model.
     # turn off if you have multiple GPUs or enough GPU memory(such as H100) and it will cost less time in inference
     # and enable to("cuda")
-
     # pipe.to("cuda")
-
-    pipe.enable_sequential_cpu_offload()
-
+    # pipe.enable_sequential_cpu_offload()
     pipe.vae.enable_slicing()
     pipe.vae.enable_tiling()
 
     # ============ FETA ============
     inject_feta_for_cogvideox(pipe.transformer)
     set_feta_weight(1)
+    enable_feta()
     # ============ FETA ============
 
     # 4. Generate the video frames based on the prompt.

@@ -6,7 +6,7 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
-from feta.globals import get_feta_weight, get_num_frames, set_num_frames
+from feta.globals import get_feta_weight, get_num_frames, is_feta_enabled, set_num_frames
 
 
 def inject_feta_for_cogvideox(model: nn.Module) -> None:
@@ -109,7 +109,8 @@ class FETACogVideoXAttnProcessor2_0:
         text_seq_length = encoder_hidden_states.size(1)
 
         # ========== FETA ==========
-        image_hidden_states = hidden_states.clone()
+        if is_feta_enabled():
+            image_hidden_states = hidden_states.clone()
         # ========== FETA ==========
 
         hidden_states = torch.cat([encoder_hidden_states, hidden_states], dim=1)
@@ -130,7 +131,8 @@ class FETACogVideoXAttnProcessor2_0:
         head_dim = inner_dim // attn.heads
 
         # ========== FETA ==========
-        feta_scores = self._get_feta_scores(attn, image_hidden_states, head_dim, batch_size)
+        if is_feta_enabled():
+            feta_scores = self._get_feta_scores(attn, image_hidden_states, head_dim, batch_size)
         # ========== FETA ==========
 
         query = query.view(batch_size, -1, attn.heads, head_dim).transpose(1, 2)
@@ -166,7 +168,8 @@ class FETACogVideoXAttnProcessor2_0:
         )
 
         # ========== FETA ==========
-        hidden_states = hidden_states * feta_scores
+        if is_feta_enabled():
+            hidden_states = hidden_states * feta_scores
         # ========== FETA ==========
 
         return hidden_states, encoder_hidden_states
