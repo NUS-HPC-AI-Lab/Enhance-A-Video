@@ -1,7 +1,7 @@
-from .cogvideox import inject_feta_for_cogvideox
 from .feta import feta_score
 from .globals import enable_feta, get_feta_weight, get_num_frames, is_feta_enabled, set_feta_weight, set_num_frames
-from .hunyuanvideo import inject_feta_for_hunyuanvideo
+from .models.cogvideox import inject_feta_for_cogvideox
+from .models.hunyuanvideo import inject_feta_for_hunyuanvideo
 
 __all__ = [
     "inject_feta_for_cogvideox",
