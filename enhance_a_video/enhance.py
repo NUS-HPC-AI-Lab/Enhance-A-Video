@@ -25,6 +25,6 @@ def feta_score(query_image, key_image, head_dim, num_frames):
     num_off_diag = num_frames * num_frames - num_frames
     mean_scores = attn_wo_diag.sum(dim=(1, 2)) / num_off_diag
 
-    mean_scores_mean = mean_scores.mean() * (num_frames + get_enhance_weight())
-    mean_scores_mean = mean_scores_mean.clamp(min=1)
-    return mean_scores_mean
+    enhance_scores = mean_scores.mean() * (num_frames + get_enhance_weight())
+    enhance_scores = enhance_scores.clamp(min=1)
+    return enhance_scores
