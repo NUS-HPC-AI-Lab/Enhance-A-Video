@@ -7,12 +7,12 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
-from feta.globals import is_feta_enabled, set_num_frames
+from feta.globals import get_num_frames, is_feta_enabled, set_num_frames
 
 
-def inject_feta_for_cogvideox(model: nn.Module) -> None:
+def inject_feta_for_hunyuanvideo(model: nn.Module) -> None:
     """
-    Inject FETA for CogVideoX model.
+    Inject FETA for HunyuanVideo model.
     1. register hook to update num frames
     2. replace attention processor with feta to weight the attention scores
     """
@@ -20,11 +20,12 @@ def inject_feta_for_cogvideox(model: nn.Module) -> None:
     model.register_forward_pre_hook(num_frames_hook, with_kwargs=True)
     # replace attention with feta
     for name, module in model.named_modules():
-        if "attn" in name and isinstance(module, Attention):
+        if "attn" in name and isinstance(module, Attention) and "transformer_blocks" in name:
+            print(f"Injecting FETA for {name}")
             module.set_processor(FETAHunyuanVideoAttnProcessor2_0())
 
 
-def num_frames_hook(_, args, kwargs):
+def num_frames_hook(module, args, kwargs):
     """
     Hook to update the number of frames automatically.
     """
@@ -33,7 +34,9 @@ def num_frames_hook(_, args, kwargs):
     else:
         hidden_states = args[0]
     num_frames = hidden_states.shape[2]
-    set_num_frames(num_frames)
+    p_t = module.config.patch_size_t
+    post_patch_num_frames = num_frames // p_t
+    set_num_frames(post_patch_num_frames)
     return args, kwargs
 
 
@@ -44,19 +47,22 @@ class FETAHunyuanVideoAttnProcessor2_0:
                 "HunyuanVideoAttnProcessor2_0 requires PyTorch 2.0. To use it, please upgrade PyTorch to 2.0."
             )
 
-    def _get_feta_scores(self, attn, query, key, encoder_hidden_states, num_frames=129):
+    def _get_feta_scores(self, attn, query, key, encoder_hidden_states):
         if attn.add_q_proj is None and encoder_hidden_states is not None:
             img_q, img_k = query[:, :, : -encoder_hidden_states.shape[1]], key[:, :, : -encoder_hidden_states.shape[1]]
         else:
             img_q, img_k = query, key
-        _, ST, num_heads, head_dim = img_q.shape
+
+        num_frames = get_num_frames()
+        _, num_heads, ST, head_dim = img_q.shape
         spatial_dim = ST / num_frames
         spatial_dim = int(spatial_dim)
 
         query_image = rearrange(
-            img_q, "B (T S) N C -> (B S) N T C", T=num_frames, S=spatial_dim, N=num_heads, C=head_dim
+            img_q, "B N (T S) C -> (B S) N T C", T=num_frames, S=spatial_dim, N=num_heads, C=head_dim
         )
-        key_image = rearrange(img_k, "B (T S) N C -> (B S) N T C", T=num_frames, S=spatial_dim, N=num_heads, C=head_dim)
+        key_image = rearrange(img_k, "B N (T S) C -> (B S) N T C", T=num_frames, S=spatial_dim, N=num_heads, C=head_dim)
+
         scale = head_dim**-0.5
         query_image = query_image * scale
         attn_temp = query_image @ key_image.transpose(-2, -1)  # translate attn to float32
