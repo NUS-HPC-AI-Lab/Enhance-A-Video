@@ -21,7 +21,6 @@ def inject_feta_for_hunyuanvideo(model: nn.Module) -> None:
     # replace attention with feta
     for name, module in model.named_modules():
         if "attn" in name and isinstance(module, Attention) and "transformer_blocks" in name:
-            print(f"Injecting FETA for {name}")
             module.set_processor(FETAHunyuanVideoAttnProcessor2_0())
 
 
