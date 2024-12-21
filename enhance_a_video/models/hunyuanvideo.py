@@ -114,10 +114,10 @@ class FETAHunyuanVideoAttnProcessor2_0:
                 query = apply_rotary_emb(query, image_rotary_emb)
                 key = apply_rotary_emb(key, image_rotary_emb)
 
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
             feta_scores = self._get_feta_scores(attn, query, key, encoder_hidden_states)
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
 
         # 4. Encoder condition QKV projection and normalization
         if attn.add_q_proj is not None and encoder_hidden_states is not None:
@@ -159,9 +159,9 @@ class FETAHunyuanVideoAttnProcessor2_0:
             if getattr(attn, "to_add_out", None) is not None:
                 encoder_hidden_states = attn.to_add_out(encoder_hidden_states)
 
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
             hidden_states = hidden_states * feta_scores
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
 
         return hidden_states, encoder_hidden_states

@@ -12,8 +12,8 @@ This repository is the official implementation of [Enhance-A-Video: Better Gener
 Install the dependencies:
 
 ```bash
-conda create -n feta python=3.10
-conda activate feta
+conda create -n enhanceAvideo python=3.10
+conda activate enhanceAvideo
 pip install -r requirements.txt
 ```
 
