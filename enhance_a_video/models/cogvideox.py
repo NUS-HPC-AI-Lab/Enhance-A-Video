@@ -120,10 +120,10 @@ class FETACogVideoXAttnProcessor2_0:
             if not attn.is_cross_attention:
                 key[:, :, text_seq_length:] = apply_rotary_emb(key[:, :, text_seq_length:], image_rotary_emb)
 
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
             feta_scores = self._get_feta_scores(attn, query, key, head_dim, text_seq_length)
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
 
         hidden_states = F.scaled_dot_product_attention(
             query, key, value, attn_mask=attention_mask, dropout_p=0.0, is_causal=False
@@ -140,9 +140,9 @@ class FETACogVideoXAttnProcessor2_0:
             [text_seq_length, hidden_states.size(1) - text_seq_length], dim=1
         )
 
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
             hidden_states = hidden_states * feta_scores
-        # ========== FETA ==========
+        # ========== Enhance-A-Video ==========
 
         return hidden_states, encoder_hidden_states

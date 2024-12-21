@@ -16,12 +16,13 @@ pipe.to("cuda")
 pipe.vae.enable_tiling()
 # pipe.vae.enable_tiling()
 
-# ============ FETA ============
+# ============ Enhance-A-Video ============
 # comment the following if you want to use the original model
 inject_feta_for_hunyuanvideo(pipe.transformer)
+# enhance_weight can be adjusted for better visual quality
 set_enhance_weight(4)
 enable_enhance()
-# ============ FETA ============
+# ============ Enhance-A-Video ============
 
 prompt = "A focused baseball player stands in the dugout, gripping his bat with determination, wearing a classic white jersey with blue pinstripes and a matching cap. The sunlight casts dramatic shadows across his face, highlighting his intense gaze as he prepares for the game. His hands, wrapped in black batting gloves, firmly hold the bat, showcasing his readiness and anticipation. The background reveals the bustling stadium, with blurred fans and vibrant green field, creating an atmosphere of excitement and competition. As he adjusts his stance, the player's concentration and passion for the sport are palpable, embodying the spirit of baseball."
 
