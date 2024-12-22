@@ -2,8 +2,6 @@
 
 [Blog](https://oahzxl.github.io/Enhance_A_Video/) | [Twitter](https://x.com/YangL_7/status/1870116980717695243)
 
-----
-
 This repository is the official implementation of [Enhance-A-Video: Better Generated Video for Free](https://oahzxl.github.io/Enhance_A_Video/).
 
 ## 🎥 Demo
@@ -15,8 +13,6 @@ For more demos, please visit our [blog](https://oahzxl.github.io/Enhance_A_Video
 - 2024-12-22: We have [ComfyUI-Hunyuan](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper) Version 🚀!
 - 2024-12-20: Enhance-A-Video is now available for [CogVideoX](https://github.com/THUDM/CogVideo) and [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)!
 - 2024-12-20: We have released code and [blog](https://oahzxl.github.io/Enhance_A_Video/) for Enhance-A-Video!
-
----
 
 ## 🎉 Method
 
