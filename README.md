@@ -1,6 +1,6 @@
 # Enhance-A-Video
 
-This repository is the official implementation of [Enhance-A-Video: Better Generared Video for Free](https://oahzxl.github.io/Enhance_A_Video/).
+This repository is the official implementation of [Enhance-A-Video: Better Generated Video for Free](https://oahzxl.github.io/Enhance_A_Video/).
 
 ![demo](assets/demo.png)
 
