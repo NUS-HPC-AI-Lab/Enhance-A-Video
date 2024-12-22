@@ -5,10 +5,7 @@
 This repository is the official implementation of [Enhance-A-Video: Better Generated Video for Free](https://oahzxl.github.io/Enhance_A_Video/).
 
 ## 🎥 Demo
-
-<div align="center">
-  <video src="https://oahzxl.github.io/Enhance_A_Video/static/videos/demo.mp4" width="50%">
-</div>
+![demo](assets/demo.png)
 
 For more demos, please visit our [blog](https://oahzxl.github.io/Enhance_A_Video/).
 
