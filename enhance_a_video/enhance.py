@@ -3,7 +3,7 @@ import torch
 from enhance_a_video.globals import get_enhance_weight
 
 
-def feta_score(query_image, key_image, head_dim, num_frames):
+def enhance_score(query_image, key_image, head_dim, num_frames):
     scale = head_dim**-0.5
     query_image = query_image * scale
     attn_temp = query_image @ key_image.transpose(-2, -1)  # translate attn to float32

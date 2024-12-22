@@ -6,22 +6,22 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
-from enhance_a_video.enhance import feta_score
+from enhance_a_video.enhance import enhance_score
 from enhance_a_video.globals import get_num_frames, is_enhance_enabled, set_num_frames
 
 
-def inject_feta_for_cogvideox(model: nn.Module) -> None:
+def inject_enhance_for_cogvideox(model: nn.Module) -> None:
     """
-    Inject FETA for CogVideoX model.
+    Inject enhance score for CogVideoX model.
     1. register hook to update num frames
-    2. replace attention processor with feta to weight the attention scores
+    2. replace attention processor with enhance processor to weight the attention scores
     """
     # register hook to update num frames
     model.register_forward_pre_hook(num_frames_hook, with_kwargs=True)
-    # replace attention with feta
+    # replace attention with enhanceAvideo
     for name, module in model.named_modules():
         if "attn" in name and isinstance(module, Attention):
-            module.set_processor(FETACogVideoXAttnProcessor2_0())
+            module.set_processor(EnhanceCogVideoXAttnProcessor2_0())
 
 
 def num_frames_hook(_, args, kwargs):
@@ -37,7 +37,7 @@ def num_frames_hook(_, args, kwargs):
     return args, kwargs
 
 
-class FETACogVideoXAttnProcessor2_0:
+class EnhanceCogVideoXAttnProcessor2_0:
     r"""
     Processor for implementing scaled dot-product attention for the CogVideoX model. It applies a rotary embedding on
     query and key vectors, but does not include spatial normalization.
@@ -47,7 +47,7 @@ class FETACogVideoXAttnProcessor2_0:
         if not hasattr(F, "scaled_dot_product_attention"):
             raise ImportError("CogVideoXAttnProcessor requires PyTorch 2.0, to use it, please upgrade PyTorch to 2.0.")
 
-    def _get_feta_scores(
+    def _get_enhance_scores(
         self,
         attn: Attention,
         query: torch.Tensor,
@@ -74,7 +74,7 @@ class FETACogVideoXAttnProcessor2_0:
             S=spatial_dim,
             C=head_dim,
         )
-        return feta_score(query_image, key_image, head_dim, num_frames)
+        return enhance_score(query_image, key_image, head_dim, num_frames)
 
     def __call__(
         self,
@@ -122,7 +122,7 @@ class FETACogVideoXAttnProcessor2_0:
 
         # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
-            feta_scores = self._get_feta_scores(attn, query, key, head_dim, text_seq_length)
+            enhance_scores = self._get_enhance_scores(attn, query, key, head_dim, text_seq_length)
         # ========== Enhance-A-Video ==========
 
         hidden_states = F.scaled_dot_product_attention(
@@ -142,7 +142,7 @@ class FETACogVideoXAttnProcessor2_0:
 
         # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
-            hidden_states = hidden_states * feta_scores
+            hidden_states = hidden_states * enhance_scores
         # ========== Enhance-A-Video ==========
 
         return hidden_states, encoder_hidden_states

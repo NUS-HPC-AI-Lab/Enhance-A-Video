@@ -1,4 +1,4 @@
-from .enhance import feta_score
+from .enhance import enhance_score
 from .globals import (
     enable_enhance,
     get_enhance_weight,
@@ -7,13 +7,13 @@ from .globals import (
     set_enhance_weight,
     set_num_frames,
 )
-from .models.cogvideox import inject_feta_for_cogvideox
-from .models.hunyuanvideo import inject_feta_for_hunyuanvideo
+from .models.cogvideox import inject_enhance_for_cogvideox
+from .models.hunyuanvideo import inject_enhance_for_hunyuanvideo
 
 __all__ = [
-    "inject_feta_for_cogvideox",
-    "inject_feta_for_hunyuanvideo",
-    "feta_score",
+    "inject_enhance_for_cogvideox",
+    "inject_enhance_for_hunyuanvideo",
+    "enhance_score",
     "get_num_frames",
     "set_num_frames",
     "get_enhance_weight",

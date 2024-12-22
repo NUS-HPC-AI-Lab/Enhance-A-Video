@@ -1,6 +1,6 @@
 NUM_FRAMES = None
-FETA_WEIGHT = None
-ENABLE_FETA = False
+ENHANCE_WEIGHT = None
+ENABLE_ENHANCE = False
 
 
 def set_num_frames(num_frames: int):
@@ -13,18 +13,18 @@ def get_num_frames() -> int:
 
 
 def enable_enhance():
-    global ENABLE_FETA
-    ENABLE_FETA = True
+    global ENABLE_ENHANCE
+    ENABLE_ENHANCE = True
 
 
 def is_enhance_enabled() -> bool:
-    return ENABLE_FETA
+    return ENABLE_ENHANCE
 
 
-def set_enhance_weight(feta_weight: float):
-    global FETA_WEIGHT
-    FETA_WEIGHT = feta_weight
+def set_enhance_weight(enhance_weight: float):
+    global ENHANCE_WEIGHT
+    ENHANCE_WEIGHT = enhance_weight
 
 
 def get_enhance_weight() -> float:
-    return FETA_WEIGHT
+    return ENHANCE_WEIGHT
