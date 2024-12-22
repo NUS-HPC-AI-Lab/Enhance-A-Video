@@ -2,7 +2,7 @@ import torch
 from diffusers import CogVideoXPipeline
 from diffusers.utils import export_to_video
 
-from enhance_a_video import enable_enhance, inject_feta_for_cogvideox, set_enhance_weight
+from enhance_a_video import enable_enhance, inject_enhance_for_cogvideox, set_enhance_weight
 
 pipe = CogVideoXPipeline.from_pretrained("THUDM/CogVideoX-2b", torch_dtype=torch.float16)
 
@@ -13,7 +13,7 @@ pipe.vae.enable_slicing()
 
 # ============ Enhance-A-Video ============
 # comment the following if you want to use the original model
-inject_feta_for_cogvideox(pipe.transformer)
+inject_enhance_for_cogvideox(pipe.transformer)
 # enhance_weight can be adjusted for better visual quality
 set_enhance_weight(1)
 enable_enhance()

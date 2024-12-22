@@ -7,22 +7,22 @@ from diffusers.models.attention import Attention
 from einops import rearrange
 from torch import nn
 
-from enhance_a_video.enhance import feta_score
+from enhance_a_video.enhance import enhance_score
 from enhance_a_video.globals import get_num_frames, is_enhance_enabled, set_num_frames
 
 
-def inject_feta_for_hunyuanvideo(model: nn.Module) -> None:
+def inject_enhance_for_hunyuanvideo(model: nn.Module) -> None:
     """
-    Inject FETA for HunyuanVideo model.
+    Inject enhance score for HunyuanVideo model.
     1. register hook to update num frames
-    2. replace attention processor with feta to weight the attention scores
+    2. replace attention processor with enhance processor to weight the attention scores
     """
     # register hook to update num frames
     model.register_forward_pre_hook(num_frames_hook, with_kwargs=True)
-    # replace attention with feta
+    # replace attention with enhanceAvideo
     for name, module in model.named_modules():
         if "attn" in name and isinstance(module, Attention) and "transformer_blocks" in name:
-            module.set_processor(FETAHunyuanVideoAttnProcessor2_0())
+            module.set_processor(EnhanceHunyuanVideoAttnProcessor2_0())
 
 
 def num_frames_hook(module, args, kwargs):
@@ -40,14 +40,14 @@ def num_frames_hook(module, args, kwargs):
     return args, kwargs
 
 
-class FETAHunyuanVideoAttnProcessor2_0:
+class EnhanceHunyuanVideoAttnProcessor2_0:
     def __init__(self):
         if not hasattr(F, "scaled_dot_product_attention"):
             raise ImportError(
                 "HunyuanVideoAttnProcessor2_0 requires PyTorch 2.0. To use it, please upgrade PyTorch to 2.0."
             )
 
-    def _get_feta_scores(self, attn, query, key, encoder_hidden_states):
+    def _get_enhance_scores(self, attn, query, key, encoder_hidden_states):
         if attn.add_q_proj is None and encoder_hidden_states is not None:
             img_q, img_k = query[:, :, : -encoder_hidden_states.shape[1]], key[:, :, : -encoder_hidden_states.shape[1]]
         else:
@@ -63,7 +63,7 @@ class FETAHunyuanVideoAttnProcessor2_0:
         )
         key_image = rearrange(img_k, "B N (T S) C -> (B S) N T C", T=num_frames, S=spatial_dim, N=num_heads, C=head_dim)
 
-        return feta_score(query_image, key_image, head_dim, num_frames)
+        return enhance_score(query_image, key_image, head_dim, num_frames)
 
     def __call__(
         self,
@@ -116,7 +116,7 @@ class FETAHunyuanVideoAttnProcessor2_0:
 
         # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
-            feta_scores = self._get_feta_scores(attn, query, key, encoder_hidden_states)
+            enhance_scores = self._get_enhance_scores(attn, query, key, encoder_hidden_states)
         # ========== Enhance-A-Video ==========
 
         # 4. Encoder condition QKV projection and normalization
@@ -161,7 +161,7 @@ class FETAHunyuanVideoAttnProcessor2_0:
 
         # ========== Enhance-A-Video ==========
         if is_enhance_enabled():
-            hidden_states = hidden_states * feta_scores
+            hidden_states = hidden_states * enhance_scores
         # ========== Enhance-A-Video ==========
 
         return hidden_states, encoder_hidden_states

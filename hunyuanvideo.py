@@ -2,7 +2,7 @@ import torch
 from diffusers import HunyuanVideoPipeline, HunyuanVideoTransformer3DModel
 from diffusers.utils import export_to_video
 
-from enhance_a_video import enable_enhance, inject_feta_for_hunyuanvideo, set_enhance_weight
+from enhance_a_video import enable_enhance, inject_enhance_for_hunyuanvideo, set_enhance_weight
 
 model_id = "tencent/HunyuanVideo"
 transformer = HunyuanVideoTransformer3DModel.from_pretrained(
@@ -18,7 +18,7 @@ pipe.vae.enable_tiling()
 
 # ============ Enhance-A-Video ============
 # comment the following if you want to use the original model
-inject_feta_for_hunyuanvideo(pipe.transformer)
+inject_enhance_for_hunyuanvideo(pipe.transformer)
 # enhance_weight can be adjusted for better visual quality
 set_enhance_weight(4)
 enable_enhance()
