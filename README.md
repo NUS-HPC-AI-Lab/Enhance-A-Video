@@ -36,7 +36,7 @@ The following table shows the requirements for running HunyuanVideo/CogVideoX mo
 |    Model     | Setting<br/>(height/width/frame) | Denoising step | GPU Peak Memory |
 |:------------:|:--------------------------------:|:--------------:|:---------------:|
 | HunyuanVideo |         720px1280px129f          |       50       |      60GB       |
-| CogVideoX-2B |          480px720px129f          |       50       |      10GB       |
+| CogVideoX-2B |          480px720px49f           |       50       |      10GB       |
 
 ## 🧱 Inference
 
