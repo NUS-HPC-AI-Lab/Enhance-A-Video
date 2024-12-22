@@ -12,7 +12,7 @@ This repository is the official implementation of [Enhance-A-Video: Better Gener
 The video has been heavily compressed to GitHub's policy. For more demos, please visit our [blog](https://oahzxl.github.io/Enhance_A_Video/).
 
 ## 🔥🔥🔥News
-- 2024-12-22: We have [ComfyUI-Hunyuan](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper) Version 🚀!
+- 2024-12-22: Our work is added into [ComfyUI-Hunyuan](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper) 🚀!
 - 2024-12-20: Enhance-A-Video is now available for [CogVideoX](https://github.com/THUDM/CogVideo) and [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)!
 - 2024-12-20: We have released code and [blog](https://oahzxl.github.io/Enhance_A_Video/) for Enhance-A-Video!
 
