@@ -1,6 +1,6 @@
 # Enhance-A-Video
 
-[Blog](https://oahzxl.github.io/Enhance_A_Video/) | [Twitter](https://x.com/YangL_7/status/1870116980717695243) | [Reddit](https://www.reddit.com/r/StableDiffusion/comments/1hj4f18/enhanceavideo_better_generared_video_for_free/?rdt=46236)
+[Paper](https://arxiv.org/abs/2502.07508) | [Blog](https://oahzxl.github.io/Enhance_A_Video/) | [Twitter](https://x.com/YangL_7/status/1870116980717695243) | [Reddit](https://www.reddit.com/r/StableDiffusion/comments/1hj4f18/enhanceavideo_better_generared_video_for_free/?rdt=46236)
 
 This repository is the official implementation of [Enhance-A-Video: Better Generated Video for Free](https://oahzxl.github.io/Enhance_A_Video/).
 
@@ -52,9 +52,13 @@ python hunyuanvideo.py
 
 ## 🔗 BibTeX
 ```BibTeX
-@misc{luo2024Enhance-A-Video,
-      title={Enhance-A-Video: Better Generated Video for Free},
+@misc{luo2025enhanceavideobettergeneratedvideo,
+      title={Enhance-A-Video: Better Generated Video for Free}, 
       author={Yang Luo and Xuanlei Zhao and Mengzhao Chen and Kaipeng Zhang and Wenqi Shao and Kai Wang and Zhangyang Wang and Yang You},
-      year={2024},
+      year={2025},
+      eprint={2502.07508},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2502.07508}, 
 }
 ```
