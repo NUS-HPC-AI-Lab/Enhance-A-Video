@@ -6,12 +6,13 @@ This repository is the official implementation of [Enhance-A-Video: Better Gener
 
 ## 🎥 Demo
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/be4feddd-aa6d-4346-adbc-f8e52b85c3f8" width="50%">
+  <video src="https://github.com/user-attachments/assets/4552d8cf-2f45-49df-8da9-fd74b3ab1368" width="50%">
 </div>
 
 The video has been heavily compressed to GitHub's policy. For more demos, please visit our [blog](https://oahzxl.github.io/Enhance_A_Video/).
 
 ## 🔥🔥🔥News
+- 2025-02-11: Release Enhance-A-Video paper: [Enhance-A-Video: Better Generated Video for Free](https://arxiv.org/abs/2502.07508).
 - 2024-12-22: Our work achieves improvements on [LTX-Video](https://github.com/Lightricks/LTX-Video) and has been added to [ComfyUI-LTX](https://github.com/logtd/ComfyUI-LTXTricks). Many thanks to [kijai](https://github.com/kijai) 👏!
 - 2024-12-22: Our work is added to [ComfyUI-Hunyuan](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper) 🚀!
 - 2024-12-20: Enhance-A-Video is now available for [CogVideoX](https://github.com/THUDM/CogVideo) and [HunyuanVideo](https://github.com/Tencent/HunyuanVideo)!
