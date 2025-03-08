@@ -12,4 +12,5 @@ openai>=1.45.0
 moviepy>=1.0.3
 pillow==9.5.0
 scikit-video
-git+https://github.com/huggingface/diffusers.git@862a7d5038c1c53641ffcab146a7eeb5ab683656
+ftfy
+git+https://github.com/huggingface/diffusers.git@b15027636a8f88c7b3d86f88ba704df43f58e727

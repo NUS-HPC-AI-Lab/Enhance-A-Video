@@ -9,10 +9,12 @@ from .globals import (
 )
 from .models.cogvideox import inject_enhance_for_cogvideox
 from .models.hunyuanvideo import inject_enhance_for_hunyuanvideo
+from .models.wan import inject_enhance_for_wan
 
 __all__ = [
     "inject_enhance_for_cogvideox",
     "inject_enhance_for_hunyuanvideo",
+    "inject_enhance_for_wan",
     "enhance_score",
     "get_num_frames",
     "set_num_frames",
