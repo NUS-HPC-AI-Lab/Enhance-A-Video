@@ -15,7 +15,7 @@ pipe.vae.enable_slicing()
 # comment the following if you want to use the original model
 inject_enhance_for_cogvideox(pipe.transformer)
 # enhance_weight can be adjusted for better visual quality
-set_enhance_weight(1)
+set_enhance_weight(3.4)
 enable_enhance()
 # ============ Enhance-A-Video ============
 

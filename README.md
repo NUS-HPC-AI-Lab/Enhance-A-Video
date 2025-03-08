@@ -5,6 +5,14 @@
 This repository is the official implementation of [Enhance-A-Video: Better Generated Video for Free](https://oahzxl.github.io/Enhance_A_Video/).
 
 ## 🎥 Demo
+Wan2.1
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/4d7794ae-3a78-4ee7-93dd-cb48bda51f5b" width="50%">
+</div>
+
+HunyuanVideo
+
 <div align="center">
   <video src="https://github.com/user-attachments/assets/4552d8cf-2f45-49df-8da9-fd74b3ab1368" width="50%">
 </div>
@@ -12,6 +20,8 @@ This repository is the official implementation of [Enhance-A-Video: Better Gener
 The video has been heavily compressed to GitHub's policy. For more demos, please visit our [blog](https://oahzxl.github.io/Enhance_A_Video/).
 
 ## 🔥🔥🔥News
+- 2025-03-08: Enhance-A-Video is now available for [Wan2.1](https://github.com/Wan-Video/Wan2.1)!
+- 2025-03-02: Our work is merged to [ComfyUI-Wan](https://github.com/kijai/ComfyUI-WanVideoWrapper) 🔥! Thank [kijai](https://github.com/kijai) for the update 👏!
 - 2025-02-11: Release Enhance-A-Video paper: [Enhance-A-Video: Better Generated Video for Free](https://arxiv.org/abs/2502.07508).
 - 2024-12-22: Our work achieves improvements on [LTX-Video](https://github.com/Lightricks/LTX-Video) and has been added to [ComfyUI-LTX](https://github.com/logtd/ComfyUI-LTXTricks). Many thanks to [kijai](https://github.com/kijai) 👏!
 - 2024-12-22: Our work is added to [ComfyUI-Hunyuan](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper) 🚀!
@@ -37,10 +47,11 @@ pip install -r requirements.txt
 ## 📜 Requirements
 The following table shows the requirements for running HunyuanVideo/CogVideoX model (batch size = 1) to generate videos:
 
-|    Model     | Setting<br/>(height/width/frame) | Denoising step | GPU Peak Memory |
-|:------------:|:--------------------------------:|:--------------:|:---------------:|
-| HunyuanVideo |         720px1280px129f          |       50       |      60GB       |
-| CogVideoX-2B |          480px720px49f           |       50       |      10GB       |
+|    Model     | Setting<br/>(height/width/frame) | Denoising step | GPU Memory Usage |
+|:------------:|:--------------------------------:|:--------------:|:----------------:|
+|    Wan2.1    |          480px832px81f           |       50       |       50GB       |
+| HunyuanVideo |         720px1280px129f          |       50       |       60GB       |
+| CogVideoX-2B |          480px720px49f           |       50       |       20GB       |
 
 ## 🧱 Inference
 
@@ -49,6 +60,7 @@ Generate videos:
 ```bash
 python cogvideox.py
 python hunyuanvideo.py
+python wan.py
 ```
 
 ## 🔗 BibTeX
